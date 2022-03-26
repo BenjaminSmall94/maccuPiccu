@@ -6,8 +6,7 @@ if (document.cookie == "") {
     document.getElementById("murica").style.display = "none";
     document.getElementById("poorly").style.display = "none";
 }
-const countryTag = document.getElementById("bestCountry");
-countryTag.innerHTML = "You beleive the best country is " + bestCountry;
+document.getElementById("bestCountry").innerHTML = "You beleive the best country is " + bestCountry;
 
 function getBestCountry(alreadyAnswered) {
     bestCountry = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different");
