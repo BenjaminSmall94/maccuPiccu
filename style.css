@@ -73,3 +73,7 @@ footer {
 #cusco {
     margin-top: 2vw;
 }
+
+#favoriteCountry {
+    display: none;
+}
