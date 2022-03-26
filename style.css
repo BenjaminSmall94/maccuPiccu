@@ -5,15 +5,6 @@ body {
     text-shadow: 1px 0 0 black
 }
 
-header {
-    width: 630px;
-    margin: 10px auto;
-    text-align: center;
-    border: 5px solid rgba(16, 101, 163, 64);
-    border-radius: 10px;
-    background-color: rgba(12, 144, 240, 94);
-}
-
 button {
     margin-bottom: 15px;
     width: 78px;
@@ -35,7 +26,8 @@ footer {
 }
 
 .container {
-    width: 630px;
+    width: calc(100vw - 100px);
+    min-width: 630px;
     margin: 10px auto;
     text-align: center;
     font-weight: bold;
@@ -44,28 +36,31 @@ footer {
     background-color: rgba(12, 144, 240, 94);
 }
 
-.portraits {
+.portraits { 
     display: inline-block;
-    width: 204px;
-    height: 300px;
+    width: calc((100vw - 100px) * 0.31 + 4px);
+    min-width: 204px;
+    margin-bottom: 8px;
 }
 
 .portraits img {
-    width: 200px;
+    width: calc((100vw - 100px) * 0.31);
+    min-width: 200px;
 }
 
 .landscapes {
     display: inline-block;
-    vertical-align: middle;
-    width: 306px;
-    height: 300px;
-    margin: 0px;
+    vertical-align: top;
+    width: calc((100vw - 100px) * 0.47 + 6);
+    min-width: 306px;
+    margin: 0px 0px 8px 0px;
 }
 
 .landscapes img {
-    width: 300px;
+    width: calc((100vw - 100px) * 0.47);
+    min-width: 300px;
 }
 
 #cusco {
-    margin-top: 18px;
+    margin-top: 2vw;
 }
