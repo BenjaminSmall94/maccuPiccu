@@ -1,4 +1,4 @@
-const bestCountry = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different");
+const bestCountry = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different\r\rFinal Hint: Popup blocker is discouraged");
 const funkinator = document.querySelector("#funkyMonkey");
 const resetter = document.querySelector("#reset");
 
