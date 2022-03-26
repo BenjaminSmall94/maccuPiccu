@@ -5,7 +5,7 @@ const resetter = document.querySelector("#reset");
 if(bestCountry.toLowerCase() == "peru") {
     confirm("You are wise beyond your years! You may continue!");
 } else if (bestCountry.toLowerCase() == "america" || bestCountry.toLowerCase() == "united states*" || bestCountry.toLowerCase() == "usa") {
-    confirm("YEEEEEEEEHAAAAAAAWWWWWW!!! Hold on for the ride of you LIFE!!");
+    confirm("YEEEEEEEEHAAAAAAAWWWWWW!!! Hold on for the ride of your LIFE!!");
     window.open("https://tenor.com/view/happy4th-of-july-merica-usa-america-gif-12105505", '_blank');
 } else {
     confirm("You failed to follow instructions");
