@@ -11,7 +11,7 @@ if (document.cookie == "") {
         confirm("YEEEEEEEEHAAAAAAAWWWWWW!!! Hold on for the ride of your LIFE!!");
         window.open("https://tenor.com/view/happy4th-of-july-merica-usa-america-gif-12105505", '_blank');
     } else {
-        confirm("You failed to follow instructions");
+        confirm("You failed to choose the correct country");
         window.open("https://tenor.com/view/himym-ted-you-chose-poorly-you-have-choosen-poorly-elegir-gif-13625278", '_blank');
     }
 } else {
