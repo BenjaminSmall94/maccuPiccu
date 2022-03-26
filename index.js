@@ -27,11 +27,11 @@ if(photoCount != 0) {
     for(let i = 0; i < photoCount; i++) {
         console.log("I'm in the loop");
         if(bestCountryIndex == 0) {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + '</h4> <img src="images/PeruvianFlag.png" alt="Peruvian Flag"></a></div>');
+            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' ' + (i + 1) + '</h4> <img src="images/PeruvianFlag.png" alt="Peruvian Flag"></a></div>');
         } else if(bestCountryIndex == 1) {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>Party Time!</h4> <img src="images/\'Murica.gif" alt="The Great American Experience"></a></div>');
+            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>Party Time!' + ' ' + (i + 1) + '</h4> <img src="images/\'Murica.gif" alt="The Great American Experience"></a></div>');
         } else {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' is WRONG!</h4> <img src="images/poorly.gif" alt="' + bestCountry + ' is WRONG!"></a></div>');
+            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' is WRONG!' + ' ' + (i + 1) + '</h4> <img src="images/poorly.gif" alt="' + bestCountry + ' is WRONG!"></a></div>');
         }
     }
 }
