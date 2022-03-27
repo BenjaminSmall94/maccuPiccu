@@ -48,7 +48,7 @@ function getBestCountry(alreadyAnswered) {
     } else {
         if (!alreadyAnswered) {
             alert("Are you sure? I'll give you one more chance to guess right");
-            getBestCountry(true);
+            answer = getBestCountry(true);
         } else {
             confirm("You failed to choose the correct country");
             document.getElementById("poorly").style.display = "initial";
@@ -61,12 +61,10 @@ function getBestCountry(alreadyAnswered) {
 function getPhotoCount(Message) {
     let answer = prompt(Message);
     answer = parseInt(answer);
-    if(Number.isInteger(answer) && answer >= 0 && answer <= 3) {
-        return answer;
-    } else {
-        getPhotoCount("You answer must be a number between 0 and 3\r\rHow corresponding photos would you like to see at the bottom of the page"); 
+    if(!(Number.isInteger(answer) && answer >= 0 && answer <= 3)) {
+        answer = getPhotoCount("You answer must be a number between 0 and 3\r\rHow corresponding photos would you like to see at the bottom of the page"); 
     }
-
+    return answer;
 }
 
 const funkinator = document.querySelector("#funkyMonkey");
