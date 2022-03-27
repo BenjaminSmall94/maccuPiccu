@@ -1,13 +1,25 @@
 let bestCountry;
 let bestCountryIndex;
 let photoCount;
+
 if (document.cookie == "") {
+    getUserInput();
+} else {
+    getCookieInfo();
+}
+writePage();
+
+
+function getUserInput() {
+    document.cookie = "";
     bestCountry = getBestCountry(false);
     photoCount = getPhotoCount("How corresponding photos would you like to see at the bottom of the page");
     document.cookie = "bestCountry=" + bestCountry;
     document.cookie = "photoCount=" + photoCount;
     document.cookie = "bestCountryIndex=" + bestCountryIndex;
-} else {
+}
+
+function getCookieInfo() {
     let decodedCookie = decodeURIComponent(document.cookie);
     let cookieArray = decodedCookie.split(';');
     bestCountry = cookieArray[0].substring(12);
@@ -16,22 +28,21 @@ if (document.cookie == "") {
     document.getElementById("murica").style.display = "none";
     document.getElementById("poorly").style.display = "none";
 }
-console.log(bestCountry + " " + photoCount + " " + bestCountryIndex);
-document.getElementById("bestCountry").innerHTML = "You beleive the best country is " + bestCountry;
-if(photoCount != 0) {
-    console.log("here I am");
-    let div = document.getElementById("favoriteCountry");
-    div.style.display = "block";
-    let h3 = document.createElement("h3");
-    div.append(bestCountry, h3);
-    for(let i = 0; i < photoCount; i++) {
-        console.log("I'm in the loop");
-        if(bestCountryIndex == 0) {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' ' + (i + 1) + '</h4> <img src="images/PeruvianFlag.png" alt="Peruvian Flag"></a></div>');
-        } else if(bestCountryIndex == 1) {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>Party Time!' + ' ' + (i + 1) + '</h4> <img src="images/\'Murica.gif" alt="The Great American Experience"></a></div>');
-        } else {
-            div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' is WRONG!' + ' ' + (i + 1) + '</h4> <img src="images/poorly.gif" alt="' + bestCountry + ' is WRONG!"></a></div>');
+
+function writePage() {
+    document.getElementById("bestCountry").innerHTML = "You beleive the best country is " + bestCountry;
+    if(photoCount != 0) {
+        let div = document.getElementById("favoriteCountry");
+        div.style.display = "block";
+        div.append(bestCountry, document.createElement("h3"));
+        for(let i = 0; i < photoCount; i++) {
+            if(bestCountryIndex == 0) {
+                div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' ' + (i + 1) + '</h4> <img src="images/PeruvianFlag.png" alt="Peruvian Flag"></a></div>');
+            } else if(bestCountryIndex == 1) {
+                div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>Party Time!' + ' ' + (i + 1) + '</h4> <img src="images/\'Murica.gif" alt="The Great American Experience"></a></div>');
+            } else {
+                div.insertAdjacentHTML("beforeend", '<div class="portraits"> <h4>' + bestCountry + ' is WRONG!' + ' ' + (i + 1) + '</h4> <img src="images/poorly.gif" alt="' + bestCountry + ' is WRONG!"></a></div>');
+            }
         }
     }
 }
@@ -67,21 +78,35 @@ function getPhotoCount(Message) {
     return answer;
 }
 
-const funkinator = document.querySelector("#funkyMonkey");
+const restarter = document.getElementById("restart");
+restarter.addEventListener("click", restart);
+function restart() {
+    document.getElementById("favoriteCountry").innerHTML = "";
+    getUserInput();
+    writePage();
+}
+
+
+const funkinator = document.getElementById("funkyMonkey");
 funkinator.addEventListener("click", getFunky);
 function getFunky() {
     let red = Math.floor(Math.random() * 256);
     let green = Math.floor(Math.random() * 256);
     let blue = Math.floor(Math.random() * 256);
+    if(bestCountryIndex == 1) {
+        document.getElementById("murica").style.display = "initial";
+    } else if (bestCountryIndex == 2) {
+        document.getElementById("poorly").style.display = "initial";
+    }
     document.body.style.backgroundColor = "rgb(" + red + ", " + blue + ", " + green + ")";
     //document.querySelectorAll(".container").style.backgroundColor = "rgb(" + green + ", " + red + ", " + blue + ")"; still working this feature
 }
 
-const resetter = document.querySelector("#reset");
-resetter.addEventListener("click", reset);
+const normalizer = document.getElementById("normalize");
+normalizer.addEventListener("click", reset);
 function reset() {
-    document.body.style.backgroundColor = "#dfeffa";
-    //document.querySelectorAll(".container").style.backgroundColor = "rgba(12, 144, 240, 94)"; still working this feature
     document.getElementById("murica").style.display = "none";
     document.getElementById("poorly").style.display = "none";
+    document.body.style.backgroundColor = "#dfeffa";
+    //document.querySelectorAll(".container").style.backgroundColor = "rgba(12, 144, 240, 94)"; still working this feature
 }
