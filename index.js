@@ -49,6 +49,8 @@ function writePage() {
 
 function getBestCountry(alreadyAnswered) {
     let answer = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different");
+    console.log(answer);
+    console.log(typeof answer);
     if(answer.toLowerCase() == "peru") {
         confirm("You are wise beyond your years! You may continue!");
         bestCountryIndex = 0;
