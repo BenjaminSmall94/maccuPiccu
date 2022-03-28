@@ -49,9 +49,10 @@ function writePage() {
 
 function getBestCountry(alreadyAnswered) {
     let answer = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different");
-    console.log(answer);
-    console.log(typeof answer);
-    if(answer.toLowerCase() == "peru") {
+    if(answer === null) {
+        alert("Why do you have to be like that...")
+        return "";
+    } else if(answer.toLowerCase() == "peru") {
         confirm("You are wise beyond your years! You may continue!");
         bestCountryIndex = 0;
     } else if (answer.toLowerCase() == "america" || answer.toLowerCase() == "united states*" || answer.toLowerCase() == "usa") {
