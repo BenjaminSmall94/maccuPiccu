@@ -50,7 +50,7 @@ function writePage() {
 function getBestCountry(alreadyAnswered) {
     let answer = prompt("What is the Best Country?\r\rHint: Try Peru\r\rAdditional Hint: Try USA for something different");
     if(answer === null) {
-        alert("Why do you have to be like that...")
+        alert("Why do you have to be like that...");
         return "";
     } else if(answer.toLowerCase() == "peru") {
         confirm("You are wise beyond your years! You may continue!");
